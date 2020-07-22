@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import { Container, Header, List } from 'semantic-ui-react';
 import axios from "axios";
+const shortid = require('shortid');
 
 function App() {
 
@@ -99,10 +100,10 @@ function App() {
             let style = {
               color: month.color
             }
-            return <List.Item style={style}>
+            return <List.Item key={shortid.generate()} style={style}>
                       {month.name}
                       <List className='users_popup'>
-                        {month.users && month.users.map(u => <List.Item>{u}</List.Item>)}
+                        {month.users && month.users.map(u => <List.Item key={shortid.generate()}>{u}</List.Item>)}
                       </List>
                    </List.Item>
         })}
