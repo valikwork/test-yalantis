@@ -1,0 +1,48 @@
+.App {
+    text-align: center;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.ui.list {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.list .item {
+    margin: 10px 0;
+    font-size: 24px;
+    position: relative;
+}
+
+.list .item:hover .users_popup {
+    visibility: visible;
+    opacity: 1;
+    transition: .3s all;
+    padding: 15px 25px;
+    background-color: antiquewhite;
+    border-radius: 15px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.users_popup {
+    position: absolute;
+    left: 200%;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s all;
+}
+
+.users_popup.list {
+    display: inline-block;
+    width: 262px;
+}
+
+.users_popup.list .item {
+    margin: 0;
+}
